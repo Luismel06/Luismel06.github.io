@@ -1,31 +1,474 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luismel — Data Analyst Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <title>Portafolio de Análisis de Datos - Luismel De León</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portafolio de proyectos de Análisis de Datos de Luismel De León: Power BI, Python, DAX, visualización y modelado de datos." />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-alt: #141a2a;
+      --card: #1b2338;
+      --accent: #4f8cff;
+      --accent-soft: rgba(79, 140, 255, 0.15);
+      --text: #f5f7ff;
+      --muted: #a7afd9;
+      --border: #252f4a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #18233f 0, #050814 55%, #02030a 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .brand h1 {
+      font-size: 1.7rem;
+      font-weight: 700;
+    }
+
+    .brand span {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.3rem;
+    }
+
+    .tag {
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      border: 1px solid rgba(167, 175, 217, 0.25);
+      color: var(--muted);
+      background: rgba(9, 13, 32, 0.9);
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.4rem;
+      font-size: 0.9rem;
+    }
+
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .pill {
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      background: rgba(9, 13, 32, 0.9);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1.2fr 1.6fr;
+      gap: 1.75rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .links {
+        align-items: flex-start;
+      }
+    }
+
+    section {
+      background: linear-gradient(145deg, rgba(29, 37, 64, 0.98), rgba(9, 13, 32, 0.98));
+      border-radius: 1.1rem;
+      border: 1px solid var(--border);
+      padding: 1.3rem 1.4rem;
+      box-shadow: 0 18px 45px rgba(2, 6, 23, 0.85);
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    h2 span.icon {
+      display: inline-flex;
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: 999px;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .about p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .about ul {
+      margin-left: 1.1rem;
+      margin-top: 0.3rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .about ul li {
+      margin-bottom: 0.25rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.5rem;
+    }
+
+    .chip {
+      font-size: 0.78rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(13, 18, 40, 0.9);
+      border: 1px solid rgba(79, 140, 255, 0.25);
+      color: var(--muted);
+    }
+
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .project {
+      background: radial-gradient(circle at top left, rgba(79, 140, 255, 0.18), transparent 55%),
+                  radial-gradient(circle at bottom right, rgba(236, 72, 153, 0.18), transparent 60%),
+                  var(--card);
+      border-radius: 0.9rem;
+      padding: 0.85rem 0.95rem;
+      border: 1px solid rgba(58, 77, 133, 0.7);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.6rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .project-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+
+    .project-meta {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .project-body {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .project-tags span {
+      font-size: 0.72rem;
+      padding: 0.1rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(143, 155, 210, 0.5);
+      color: var(--muted);
+      background: rgba(7, 11, 28, 0.9);
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      font-size: 0.8rem;
+    }
+
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.18rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      background: rgba(9, 13, 32, 0.95);
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .btn-link:hover {
+      background: var(--accent);
+      color: #050816;
+      text-decoration: none;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.6rem;
+      margin-top: 0.5rem;
+    }
+
+    .skill-card {
+      background: var(--bg-alt);
+      border-radius: 0.7rem;
+      border: 1px solid var(--border);
+      padding: 0.5rem 0.6rem;
+      font-size: 0.8rem;
+    }
+
+    .skill-card strong {
+      display: block;
+      margin-bottom: 0.2rem;
+      font-size: 0.82rem;
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: center;
+      opacity: 0.8;
+    }
+  </style>
 </head>
 <body>
+  <div class="wrapper">
     <header>
+      <div class="brand">
         <h1>Luismel De León</h1>
-        <h2>Data Analyst | Python | Power BI</h2>
+        <span>Data Analyst | Power BI · Python · SQL</span>
+        <div class="tags">
+          <span class="tag">Análisis de Datos</span>
+          <span class="tag">Business Intelligence</span>
+          <span class="tag">Modelado & Visualización</span>
+        </div>
+      </div>
+      <div class="links">
+        <div class="pill">Basado en proyectos reales de práctica y experiencia técnica</div>
+        <a href="https://github.com/Luismel06" target="_blank" rel="noreferrer">
+          🐙 GitHub · <span>github.com/Luismel06</span>
+        </a>
+        <!-- TODO: reemplaza este mail por el tuyo real -->
+        <a href="mailto:tu-correo@ejemplo.com">
+          ✉️ Contacto · <span>tu-correo@ejemplo.com</span>
+        </a>
+      </div>
     </header>
 
-    <section id="about">
-        <h3>About Me</h3>
+    <main>
+      <!-- Columna izquierda: Sobre mí y Skills -->
+      <section class="about">
+        <h2><span class="icon">👋</span>Sobre mí</h2>
         <p>
-            I am a Data Analyst passionate about transforming data into insights using Python, Power BI and SQL.
+          Soy estudiante de Ingeniería de Software con enfoque en <strong>Análisis de Datos</strong>.
+          Tengo experiencia práctica construyendo dashboards en Power BI, análisis exploratorio con Python
+          (pandas, matplotlib) y trabajando con datos reales en contextos de negocio, soporte técnico
+          e infraestructura.
         </p>
-    </section>
+        <p>
+          Me interesa transformar datos en decisiones accionables, diseñar reportes claros para el negocio
+          y seguir profundizando en herramientas como SQL, Power BI y el ecosistema de Python.
+        </p>
 
-    <section id="projects">
-        <h3>Projects</h3>
+        <h2><span class="icon">🧰</span>Habilidades</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <strong>Herramientas BI</strong>
+            Power BI, DAX, Dashboards interactivos, KPIs
+          </div>
+          <div class="skill-card">
+            <strong>Lenguajes & Data</strong>
+            Python, Pandas, Matplotlib, conceptos de SQL
+          </div>
+          <div class="skill-card">
+            <strong>Modelado & Análisis</strong>
+            Análisis exploratorio (EDA), limpieza de datos, métricas de negocio
+          </div>
+          <div class="skill-card">
+            <strong>Otros</strong>
+            Git/GitHub, VS Code, documentación técnica, soporte tecnológico
+          </div>
+        </div>
+
+        <h2><span class="icon">🎯</span>Enfoque actual</h2>
         <ul>
-            <li><a href="https://github.com/Luismel06/analisis-accidentes-transito-2023" target="_blank">Análisis de Accidentes de Tránsito — Python</a></li>
-            <li>📊 Power BI — Employee HR Dashboard (coming soon)</li>
-            <Li>📊 Power BI — Sales Dashboard (coming soon)</Li>
+          <li>Desarrollar experiencia como Analista de Datos (Data Analyst).</li>
+          <li>Fortalecer portafolio con proyectos aplicados a negocio.</li>
+          <li>Practicar métricas de ventas, RRHH, y análisis operativo.</li>
         </ul>
-    </section>
+      </section>
+
+      <!-- Columna derecha: Proyectos -->
+      <section>
+        <h2><span class="icon">📊</span>Proyectos de Análisis de Datos</h2>
+        <div class="projects">
+
+          <!-- Proyecto 1: Ventas (Power BI) -->
+          <article class="project">
+            <div class="project-header">
+              <div>
+                <div class="project-title">Dashboard de Ventas – Power BI</div>
+                <div class="project-meta">Análisis de ingresos, categorías y productos top</div>
+              </div>
+              <span class="tag">Power BI</span>
+            </div>
+            <div class="project-body">
+              Dashboard interactivo de ventas con métricas como Ventas Netas, Ganancia,
+              Número de órdenes y Ticket promedio. Incluye análisis por mes, categoría,
+              canal de venta y top 10 productos, con segmentadores para filtrar por región,
+              canal y fechas.
+            </div>
+            <div class="project-tags">
+              <span>KPIs de ventas</span>
+              <span>DAX</span>
+              <span>Visualización</span>
+              <span>Segmentadores</span>
+            </div>
+            <div class="project-links">
+              <!-- Cuando tengas el .pbix en un repo, cambia este link -->
+              <a class="btn-link" href="#" onclick="alert('Próximamente se enlazará el archivo .pbix o reporte publicado.'); return false;">
+                Ver archivo / reporte
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyecto 2: Accidentes (Python) -->
+          <article class="project">
+            <div class="project-header">
+              <div>
+                <div class="project-title">Análisis de Accidentes de Tránsito (Python)</div>
+                <div class="project-meta">Exploración, visualización y reporte PDF</div>
+              </div>
+              <span class="tag">Python · Pandas</span>
+            </div>
+            <div class="project-body">
+              Proyecto de análisis exploratorio de 1,200 registros de accidentes de tránsito simulados
+              para República Dominicana. Incluye procesamiento de fechas, creación de variables
+              derivadas y visualizaciones por hora del día, día de la semana, mes, municipio y
+              tipo de accidente, además de análisis de lesionados y fallecidos.
+            </div>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>Pandas</span>
+              <span>Matplotlib</span>
+              <span>EDA</span>
+              <span>Reporte PDF</span>
+            </div>
+            <div class="project-links">
+              <a class="btn-link" href="https://github.com/Luismel06/analisis-accidentes-transito-2023" target="_blank" rel="noreferrer">
+                🔗 Ver repositorio en GitHub
+              </a>
+              <!-- Cuando subas el PDF al repo de accidentes o a este, actualiza el enlace -->
+              <a class="btn-link" href="#" onclick="alert('Próximamente se enlazará el PDF del reporte.'); return false;">
+                📄 Ver reporte PDF
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyecto 3: Recursos Humanos (Power BI) -->
+          <article class="project">
+            <div class="project-header">
+              <div>
+                <div class="project-title">Dashboard de Recursos Humanos – Power BI</div>
+                <div class="project-meta">Headcount, rotación y desempeño</div>
+              </div>
+              <span class="tag">Power BI · RRHH</span>
+            </div>
+            <div class="project-body">
+              Dashboard de Recursos Humanos construido a partir de un dataset de 250 empleados.
+              Incluye métricas de headcount actual, empleados activos, empleados salidos, rotación,
+              salario promedio y desempeño promedio, además de visualizaciones por departamento,
+              ciudad, modalidad de trabajo y análisis de entradas y salidas por año.
+            </div>
+            <div class="project-tags">
+              <span>RRHH Analytics</span>
+              <span>Rotación</span>
+              <span>Headcount</span>
+              <span>Salario & desempeño</span>
+            </div>
+            <div class="project-links">
+              <a class="btn-link" href="#" onclick="alert('Próximamente se enlazará el archivo .pbix o capturas del dashboard.'); return false;">
+                Ver dashboard / capturas
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Portafolio de Análisis de Datos · Construido con Power BI, Python y GitHub Pages · Luismel De León
+    </footer>
+  </div>
 </body>
 </html>
