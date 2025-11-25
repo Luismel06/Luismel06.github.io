@@ -2,580 +2,577 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Portafolio de Análisis de Datos - Luismel De León</title>
+  <title>Portafolio · Luismel De León</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portafolio de proyectos de Análisis de Datos de Luismel De León: Power BI, Python, SQL, DAX, APIs, visualización y modelado de datos." />
-  <style>
-    :root {
-      --bg: #0b1020;
-      --bg-alt: #141a2a;
-      --card: #1b2338;
-      --accent: #4f8cff;
-      --accent-soft: rgba(79, 140, 255, 0.15);
-      --text: #f5f7ff;
-      --muted: #a7afd9;
-      --border: #252f4a;
-    }
+  <meta name="description" content="Portafolio de Análisis de Datos y Desarrollo de Software de Luismel De León." />
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="styles.css" />
 
-    body {
-      background: radial-gradient(circle at top, #18233f 0, #050814 55%, #02030a 100%);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .wrapper {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2.5rem 1.25rem 4rem;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    .brand h1 {
-      font-size: 1.7rem;
-      font-weight: 700;
-    }
-
-    .brand span {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.3rem;
-    }
-
-    .tag {
-      padding: 0.15rem 0.6rem;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      border: 1px solid rgba(167, 175, 217, 0.25);
-      color: var(--muted);
-      background: rgba(9, 13, 32, 0.9);
-    }
-
-    .links {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 0.4rem;
-      font-size: 0.9rem;
-    }
-
-    .links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .pill {
-      padding: 0.3rem 0.75rem;
-      border-radius: 999px;
-      border: 1px solid var(--accent-soft);
-      background: rgba(9, 13, 32, 0.9);
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    main {
-      display: grid;
-      grid-template-columns: 1.2fr 1.6fr;
-      gap: 1.75rem;
-      align-items: flex-start;
-    }
-
-    @media (max-width: 900px) {
-      main {
-        grid-template-columns: 1fr;
-      }
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .links {
-        align-items: flex-start;
-      }
-    }
-
-    section {
-      background: linear-gradient(145deg, rgba(29, 37, 64, 0.98), rgba(9, 13, 32, 0.98));
-      border-radius: 1.1rem;
-      border: 1px solid var(--border);
-      padding: 1.3rem 1.4rem;
-      box-shadow: 0 18px 45px rgba(2, 6, 23, 0.85);
-    }
-
-    h2 {
-      font-size: 1.1rem;
-      margin-bottom: 0.75rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    h2 span.icon {
-      display: inline-flex;
-      width: 1.4rem;
-      height: 1.4rem;
-      border-radius: 999px;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      background: var(--accent-soft);
-      color: var(--accent);
-    }
-
-    .about p {
-      font-size: 0.92rem;
-      color: var(--muted);
-      margin-bottom: 0.75rem;
-    }
-
-    .about ul {
-      margin-left: 1.1rem;
-      margin-top: 0.3rem;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .about ul li {
-      margin-bottom: 0.25rem;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      margin-top: 0.5rem;
-    }
-
-    .chip {
-      font-size: 0.78rem;
-      padding: 0.15rem 0.55rem;
-      border-radius: 999px;
-      background: rgba(13, 18, 40, 0.9);
-      border: 1px solid rgba(79, 140, 255, 0.25);
-      color: var(--muted);
-    }
-
-    .projects {
-      display: flex;
-      flex-direction: column;
-      gap: 0.9rem;
-    }
-
-    .project {
-      background: radial-gradient(circle at top left, rgba(79, 140, 255, 0.18), transparent 55%),
-                  radial-gradient(circle at bottom right, rgba(236, 72, 153, 0.18), transparent 60%),
-                  var(--card);
-      border-radius: 0.9rem;
-      padding: 0.85rem 0.95rem;
-      border: 1px solid rgba(58, 77, 133, 0.7);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 0.6rem;
-      margin-bottom: 0.35rem;
-    }
-
-    .project-title {
-      font-size: 0.98rem;
-      font-weight: 600;
-    }
-
-    .project-meta {
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    .project-body {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 0.5rem;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.3rem;
-      margin-bottom: 0.45rem;
-    }
-
-    .project-tags span {
-      font-size: 0.72rem;
-      padding: 0.1rem 0.5rem;
-      border-radius: 999px;
-      border: 1px solid rgba(143, 155, 210, 0.5);
-      color: var(--muted);
-      background: rgba(7, 11, 28, 0.9);
-    }
-
-    .project-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-      font-size: 0.8rem;
-    }
-
-    .btn-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      padding: 0.18rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid var(--accent);
-      background: rgba(9, 13, 32, 0.95);
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .btn-link:hover {
-      background: var(--accent);
-      color: #050816;
-      text-decoration: none;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 0.6rem;
-      margin-top: 0.5rem;
-    }
-
-    .skill-card {
-      background: var(--bg-alt);
-      border-radius: 0.7rem;
-      border: 1px solid var(--border);
-      padding: 0.5rem 0.6rem;
-      font-size: 0.8rem;
-    }
-
-    .skill-card strong {
-      display: block;
-      margin-bottom: 0.2rem;
-      font-size: 0.82rem;
-    }
-
-    footer {
-      margin-top: 2rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-      text-align: center;
-      opacity: 0.8;
-    }
-  </style>
+  <!-- Font Awesome para íconos -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
 </head>
 <body>
-  <div class="wrapper">
-    <header>
-      <div class="brand">
-        <h1>Luismel De León</h1>
-        <span>Data Analyst | Power BI · Python · SQL · APIs</span>
-        <div class="tags">
-          <span class="tag">Análisis de Datos</span>
-          <span class="tag">Business Intelligence</span>
-          <span class="tag">Modelado & Visualización</span>
-          <span class="tag">APIs & Integración</span>
-        </div>
-      </div>
-      <div class="links">
-        <div class="pill">Portafolio basado en proyectos reales (One Way Pizza, ORIS79E, RRHH, Ventas y más)</div>
-        <a href="https://github.com/Luismel06" target="_blank" rel="noreferrer">
-          🐙 GitHub · <span>github.com/Luismel06</span>
-        </a>
-        <!-- Sustituye la URL de LinkedIn por la tuya real -->
-        <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
-          🔗 LinkedIn · <span>Luismel De León E.</span>
-        </a>
-        <a href="mailto:luismel809524@gmail.com">
-          ✉️ Contacto · <span>luismel809524@gmail.com</span>
-        </a>
-      </div>
-    </header>
+  <!-- Botón flotante para cambiar idioma -->
+  <button id="lang-toggle" class="lang-toggle">EN</button>
 
-    <main>
-      <!-- Columna izquierda: Sobre mí, skills, experiencia -->
-      <section class="about">
-        <h2><span class="icon">👋</span>Sobre mí</h2>
-        <p>
-          Soy Analista de Datos con experiencia generando insights, dashboards y reportes de KPIs a partir de
-          sistemas en producción como <strong>One Way Pizza</strong> y <strong>ORIS79E Services</strong>. Manejo SQL,
-          Power BI y Python para transformar datos en decisiones accionables, con foco en ventas, operaciones y
-          rendimiento de servicios.
-        </p>
-        <p>
-          Además, he trabajado en contextos reales de negocio y soporte corporativo: validación de datos deportivos
-          en Synergy Sports, soporte avanzado para Visionary Solutions (Night Owl) y soporte técnico presencial para
-          usuarios corporativos de Microsoft (Bluemall). Me motiva conectar el lado técnico (datos, APIs, integraciones)
-          con necesidades reales del negocio.
-        </p>
-
-        <h2><span class="icon">🧰</span>Habilidades</h2>
-        <div class="skills-grid">
-          <div class="skill-card">
-            <strong>BI & Data</strong>
-            Power BI (dashboards, KPIs, DAX básico), Supabase Analytics, Excel avanzado, modelado y limpieza de datos.
-          </div>
-          <div class="skill-card">
-            <strong>Lenguajes & Data</strong>
-            SQL (joins, modelado relacional), Python para análisis (pandas, matplotlib), fundamentos de JavaScript y PHP.
-          </div>
-          <div class="skill-card">
-            <strong>APIs & Integración</strong>
-            RESTful APIs, JSON, OAuth2, pruebas con Postman, integración de APIs en POS y aplicaciones web.:contentReference[oaicite:4]{index=4}
-          </div>
-          <div class="skill-card">
-            <strong>Herramientas & Metodologías</strong>
-            Git, VS Code, Jira, Scrum, Kanban, documentación técnica, data dictionaries y reportes analíticos.
+  <!-- ================= ESPAÑOL ================= -->
+  <div id="content-es">
+    <div class="wrapper">
+      <header>
+        <div class="brand">
+          <h1>Luismel De León</h1>
+          <span>Data Analyst & Software Developer · Power BI · Python · SQL · React</span>
+          <div class="tags">
+            <span class="tag">Análisis de Datos</span>
+            <span class="tag">Business Intelligence</span>
+            <span class="tag">Desarrollo Web</span>
+            <span class="tag">APIs & Integración</span>
           </div>
         </div>
-
-        <h2><span class="icon">💼</span>Experiencia relevante</h2>
-        <ul>
-          <li>
-            <strong>Advanced Support Specialist – Visionary Solutions (Night Owl)</strong> · Oct 2024 – Oct 2025<br/>
-            Liderazgo de un equipo de soporte, resolución de issues avanzados, documentación de problemas
-            recurrentes y mejora de guías técnicas.
-          </li>
-          <li>
-            <strong>POS Support Engineer – Artesanía Lisbeth</strong> · Nov 2023 – Dic 2024<br/>
-            Integración de APIs para POS, monitoreo de infraestructura, soporte a usuarios y estabilidad del entorno
-            de TI (red, estaciones de trabajo, periféricos).
-          </li>
-          <li>
-            <strong>Technical Support – Microsoft (Bluemall)</strong> · Jun 2024 – Presente<br/>
-            Soporte presencial a usuarios corporativos, manejo de datos de equipos, incidencias y documentación técnica.:contentReference[oaicite:8]{index=8}
-          </li>
-        </ul>
-
-        <h2><span class="icon">🎓</span>Formación & Certificaciones</h2>
-        <ul>
-          <li>Curso “API Testing with Postman: Masterclass All-in-One” – Udemy.</li>
-          <li>Curso “Basics of SQL with PostgreSQL” – Udemy.</li>
-          <li>Jira Fundamentals Badge – Atlassian.</li>
-          <li>Certificación en Quality Assurance (QA) – Alison.com.</li>
-        </ul>
-
-        <h2><span class="icon">🎯</span>Enfoque actual</h2>
-        <ul>
-          <li>Desarrollar carrera como <strong>Data Analyst</strong>, combinando Power BI, SQL y Python.</li>
-          <li>Fortalecer análisis de ventas, RRHH, rendimiento de servicios y métricas de soporte.</li>
-          <li>Conectar proyectos personales (One Way Pizza, ORIS79E Services) con buenas prácticas de BI y APIs.</li>
-        </ul>
-      </section>
-
-      <!-- Columna derecha: Proyectos -->
-      <section>
-        <h2><span class="icon">📊</span>Proyectos de Análisis de Datos & Desarrollo</h2>
-        <div class="projects">
-
-          <!-- One Way Pizza -->
-          <article class="project">
-            <div class="project-header">
-              <div>
-                <div class="project-title">One Way Pizza – Plataforma de Ventas & KPIs</div>
-                <div class="project-meta">Sistema real en producción · React + Supabase</div>
-              </div>
-              <span class="tag">Ventas · Supabase</span>
-            </div>
-            <div class="project-body">
-              Desarrollo de una plataforma de punto de venta (POS) para un negocio de pizzas, con métricas de ventas
-              diarias, semanales y mensuales. Implementé consultas SQL en Supabase para analizar productos, ingresos y
-              demanda, y diseñé dashboards que permiten monitorear el rendimiento de empleados y del negocio.:contentReference[oaicite:10]{index=10}
-            </div>
-            <div class="project-tags">
-              <span>SQL (Supabase)</span>
-              <span>Ventas & KPIs</span>
-              <span>React.js</span>
-              <span>PostgreSQL</span>
-            </div>
-            <div class="project-links">
-              <!-- Reemplaza '#' por el enlace real al repositorio de One Way Pizza -->
-              <a class="btn-link" href="#" target="_blank" rel="noreferrer">
-                🔗 Ver código / arquitectura (One Way Pizza)
-              </a>
-            </div>
-          </article>
-
-          <!-- ORIS79E Services -->
-          <article class="project">
-            <div class="project-header">
-              <div>
-                <div class="project-title">ORIS79E Services – Analytics de Tickets & Servicios</div>
-                <div class="project-meta">Análisis operativo de servicios técnicos</div>
-              </div>
-              <span class="tag">Servicios · Operaciones</span>
-            </div>
-            <div class="project-body">
-              Plataforma orientada a gestión de servicios, técnicos y tiempos de respuesta. Definí KPIs para medir
-              eficiencia, carga de trabajo y productividad, generando reportes para la toma de decisiones y mejora de
-              la operación.:contentReference[oaicite:11]{index=11}
-            </div>
-            <div class="project-tags">
-              <span>Ticket analytics</span>
-              <span>KPIs operativos</span>
-              <span>SQL</span>
-              <span>Supabase</span>
-            </div>
-            <div class="project-links">
-              <!-- Reemplaza '#' por el enlace real al repositorio de ORIS79E -->
-              <a class="btn-link" href="#" target="_blank" rel="noreferrer">
-                🔗 Ver módulo de datos / diseño (ORIS79E)
-              </a>
-            </div>
-          </article>
-
-          <!-- Dashboard Ventas Power BI -->
-          <article class="project">
-            <div class="project-header">
-              <div>
-                <div class="project-title">Dashboard de Ventas – Power BI</div>
-                <div class="project-meta">Análisis de ingresos, categorías y productos top</div>
-              </div>
-              <span class="tag">Power BI</span>
-            </div>
-            <div class="project-body">
-              Dashboard interactivo de ventas con métricas como Ventas Netas, Ganancia, Número de órdenes y Ticket
-              promedio. Incluye análisis por mes, categoría, canal de venta y top 10 productos, con segmentadores para
-              filtrar por región, canal y período. Pensado como pieza de portafolio para escenarios de negocio reales.
-            </div>
-            <div class="project-tags">
-              <span>KPIs de ventas</span>
-              <span>DAX</span>
-              <span>Visualización</span>
-              <span>Segmentadores</span>
-            </div>
-            <div class="project-links">
-              <!-- Sustituye por link al .pbix o captura cuando lo subas -->
-              <a class="btn-link" href="#" target="_blank" rel="noreferrer">
-                📊 Ver archivo / capturas (próximamente)
-              </a>
-            </div>
-          </article>
-
-          <!-- Dashboard RRHH Power BI -->
-          <article class="project">
-            <div class="project-header">
-              <div>
-                <div class="project-title">Dashboard de Recursos Humanos – Power BI</div>
-                <div class="project-meta">Headcount, rotación, salario y desempeño</div>
-              </div>
-              <span class="tag">Power BI · RRHH</span>
-            </div>
-            <div class="project-body">
-              Dashboard de Recursos Humanos construido a partir de un dataset de empleados. Incluye headcount actual,
-              empleados activos y salidos, rotación %, salario promedio y desempeño promedio, además de vistas por
-              departamento, ciudad, modalidad de trabajo y análisis de entradas y salidas por año.
-            </div>
-            <div class="project-tags">
-              <span>RRHH Analytics</span>
-              <span>Rotación</span>
-              <span>Headcount</span>
-              <span>Salario & desempeño</span>
-            </div>
-            <div class="project-links">
-              <a class="btn-link" href="#" target="_blank" rel="noreferrer">
-                📊 Ver dashboard / capturas (próximamente)
-              </a>
-            </div>
-          </article>
-
-          <!-- Análisis Accidentes Python -->
-          <article class="project">
-            <div class="project-header">
-              <div>
-                <div class="project-title">Análisis de Accidentes de Tránsito (Python)</div>
-                <div class="project-meta">Exploración, visualización y reporte</div>
-              </div>
-              <span class="tag">Python · Pandas</span>
-            </div>
-            <div class="project-body">
-              Análisis exploratorio de 1,200 registros de accidentes de tránsito simulados para República Dominicana.
-              Procesamiento de fechas, creación de variables (hora, día de la semana, mes), y visualizaciones por hora
-              del día, día, mes, municipio y tipo de accidente, incluyendo lesionados y fallecidos. Proyecto documentado
-              en script de Python y reporte PDF.:contentReference[oaicite:12]{index=12}
-            </div>
-            <div class="project-tags">
-              <span>Pandas</span>
-              <span>Matplotlib</span>
-              <span>EDA</span>
-              <span>Reporte PDF</span>
-            </div>
-            <div class="project-links">
-              <a class="btn-link" href="https://github.com/Luismel06/analisis-accidentes-transito-2023" target="_blank" rel="noreferrer">
-                🔗 Ver repositorio en GitHub
-              </a>
-              <!-- Reemplaza '#' por el link real al PDF cuando lo subas -->
-              <a class="btn-link" href="#" target="_blank" rel="noreferrer">
-                📄 Ver reporte PDF (próximamente)
-              </a>
-            </div>
-          </article>
-
-          <!-- Basketball Stats Web App -->
-          <article class="project">
-            <div class="project-header">
-              <div>
-                <div class="project-title">Basketball Stats Management Web App</div>
-                <div class="project-meta">Registro de partidos y desempeño de jugadores</div>
-              </div>
-              <span class="tag">Web App · PostgreSQL</span>
-            </div>
-            <div class="project-body">
-              Aplicación web para registrar partidos y estadísticas de jugadores. Incluye endpoints REST integrados
-              con PostgreSQL, front end desarrollado en Angular y documentación de usuario & API. Muestra la conexión
-              entre desarrollo web, bases de datos y necesidades analíticas.:contentReference[oaicite:13]{index=13}
-            </div>
-            <div class="project-tags">
-              <span>PostgreSQL</span>
-              <span>REST APIs</span>
-              <span>Angular</span>
-              <span>Documentación técnica</span>
-            </div>
-          </article>
-
+        <div class="links">
+          <div class="pill">Portafolio basado en proyectos reales (One Way Pizza, ORIS79E, RRHH, Ventas, Accidentes)</div>
+          <a href="https://github.com/Luismel06" target="_blank" rel="noreferrer">
+            <i class="fa-brands fa-github"></i>
+            GitHub · <span>github.com/Luismel06</span>
+          </a>
+          <!-- Cambia este LinkedIn por el tuyo cuando lo tengas -->
+          <a href="https://www.linkedin.com/in/luismeldeleon/" target="_blank" rel="noreferrer">
+            <i class="fa-brands fa-linkedin"></i>
+            LinkedIn · <span>Luismel De León</span>
+          </a>
+          <a href="mailto:luismel809524@gmail.com">
+            <i class="fa-solid fa-envelope"></i>
+            Contacto · <span>luismel809524@gmail.com</span>
+          </a>
         </div>
-      </section>
-    </main>
+      </header>
 
-    <footer>
-      Portafolio de Análisis de Datos · Construido con Power BI, Python, SQL y GitHub Pages · Luismel De León
-    </footer>
+      <main>
+        <!-- Columna izquierda ES -->
+        <section class="about">
+          <h2><span class="icon"><i class="fa-solid fa-user"></i></span>Sobre mí</h2>
+          <p>
+            Soy Analista de Datos y Desarrollador de Software con experiencia creando dashboards, reportes y
+            aplicaciones web conectadas a bases de datos y APIs. Me gusta trabajar con datos de negocio para
+            responder preguntas concretas, automatizar procesos y diseñar soluciones que realmente se usen.
+          </p>
+          <p>
+            He trabajado en entornos reales de soporte técnico, integración de APIs y validación de datos,
+            además de construir proyectos propios como <strong>One Way Pizza</strong> y
+            <strong>ORIS79E Services</strong>, donde combino análisis, backend y frontend.
+          </p>
+
+          <h2><span class="icon"><i class="fa-solid fa-toolbox"></i></span>Habilidades</h2>
+          <div class="skills-grid">
+            <div class="skill-card">
+              <strong>Data & BI</strong>
+              Power BI, DAX básico, diseño de KPIs, dashboards para ventas y RRHH, limpieza y modelado de datos.
+            </div>
+            <div class="skill-card">
+              <strong>Lenguajes & Datos</strong>
+              Python (pandas, matplotlib), SQL (PostgreSQL, MySQL, Supabase), fundamentos de JavaScript y PHP.
+            </div>
+            <div class="skill-card">
+              <strong>Desarrollo Web</strong>
+              React, Supabase, APIs REST, autenticación, CRUDs, integración con POS y manejo de estado.
+            </div>
+            <div class="skill-card">
+              <strong>Herramientas</strong>
+              Git/GitHub, VS Code, Jira, documentación técnica, soporte a usuarios, reporte de incidencias.
+            </div>
+          </div>
+
+          <h2><span class="icon"><i class="fa-solid fa-briefcase"></i></span>Experiencia relevante</h2>
+          <ul>
+            <li>
+              <strong>Advanced Support Specialist – Visionary Solutions (Night Owl)</strong><br/>
+              Resolución de issues técnicos avanzados, liderazgo de un pequeño equipo de soporte, documentación de
+              problemas recurrentes y mejora de la experiencia del usuario.
+            </li>
+            <li>
+              <strong>POS Support Engineer – Artesanía Lisbeth</strong><br/>
+              Integración de APIs para su sistema POS, monitoreo de infraestructura, soporte a usuarios, pruebas de
+              autenticación y estabilidad del entorno de TI.
+            </li>
+            <li>
+              <strong>Technical Support – Microsoft (Bluemall)</strong><br/>
+              Soporte presencial a usuarios corporativos, gestión de equipos, incidencias y documentación técnica.
+            </li>
+          </ul>
+
+          <h2><span class="icon"><i class="fa-solid fa-graduation-cap"></i></span>Formación & Enfoque</h2>
+          <ul>
+            <li>Estudiante de Ingeniería de Software con enfoque en Análisis de Datos.</li>
+            <li>Cursos de SQL, APIs y QA (PostgreSQL, Postman, QA Fundamentals, Jira Fundamentals, etc.).</li>
+            <li>Enfoque actual: consolidar carrera como <strong>Data Analyst</strong> y seguir creciendo en desarrollo backend y web.</li>
+          </ul>
+        </section>
+
+        <!-- Columna derecha ES: Proyectos -->
+        <section>
+          <h2><span class="icon"><i class="fa-solid fa-chart-line"></i></span>Proyectos de Datos & Desarrollo</h2>
+          <div class="projects">
+
+            <!-- One Way Pizza -->
+            <article class="project">
+              <div class="project-header">
+                <div>
+                  <div class="project-title">One Way Pizza – Plataforma de Ventas & KPIs</div>
+                  <div class="project-meta">Sistema POS · React + Supabase · Métricas en tiempo real</div>
+                </div>
+                <span class="tag">Fullstack · Ventas</span>
+              </div>
+
+              <!-- Galería de imágenes One Way Pizza -->
+              <div class="gallery">
+                <!-- Ajusta los nombres de archivo a los que tengas realmente -->
+                <img src="imagenes/one-way-pizza/Login.png" alt="One Way Pizza - Login" />
+                <img src="imagenes/one-way-pizza/Admin.png" alt="One Way Pizza - adminhome" />
+                <img src="imagenes/one-way-pizza/Dashboard.png" alt="One Way Pizza - dashboard" />
+                <img src="imagenes/one-way-pizza/Empleado.png" alt="One Way Pizza - empleadohome" />
+                <img src="imagenes/one-way-pizza/Caja.png" alt="One Way Pizza - caja" />
+              </div>
+
+              <div class="project-body">
+                Aplicación web tipo punto de venta (POS) para un negocio de pizzas. Maneja pedidos, productos,
+                usuarios y flujo de caja, conectada a Supabase (PostgreSQL) como backend. A partir de los datos de
+                ventas, diseñé consultas y vistas para analizar ingresos, productos más vendidos y horarios de mayor
+                demanda.
+              </div>
+              <div class="project-tags">
+                <span>React</span>
+                <span>Supabase</span>
+                <span>PostgreSQL</span>
+                <span>Ventas & KPIs</span>
+              </div>
+              <div class="project-links">
+                <!-- Cambia este enlace cuando publiques el repo -->
+                <a class="btn-link" href="https://github.com/Luismel06/one-way-pizza" target="_blank" rel="noreferrer">
+                  <i class="fa-solid fa-code-branch"></i>
+                  Ver arquitectura / código
+                </a>
+              </div>
+            </article>
+
+            <!-- ORIS79E -->
+            <article class="project">
+              <div class="project-header">
+                <div>
+                  <div class="project-title">ORIS79E Services – Gestión de Servicios & Tickets</div>
+                  <div class="project-meta">Plataforma de servicios técnicos · React + Supabase</div>
+                </div>
+                <span class="tag">Servicios · Operaciones</span>
+              </div>
+
+              <!-- Galería de imágenes ORIS79E -->
+              <div class="gallery">
+                 <img src="imagenes/oris79e-services/Home.png" alt="ORIS79E - request details" />
+                <img src="imagenes/oris79e-services/Dashboard.png" alt="ORIS79E - services board" />
+                <img src="imagenes/oris79e-services/Nosotros.png" alt="ORIS79E - request details" />
+              </div>
+
+              <div class="project-body">
+                Diseño de una plataforma para gestionar solicitudes de clientes, técnicos asignados, publicaciones
+                internas y cotizaciones. La solución incluye panel de administración y vista de cliente, permitiendo
+                analizar carga de trabajo, tiempos de atención y estado de cada servicio.
+              </div>
+              <div class="project-tags">
+                <span>React</span>
+                <span>Supabase</span>
+                <span>Gestión de tickets</span>
+                <span>Operaciones</span>
+              </div>
+              <div class="project-links">
+                <a class="btn-link" href="https://github.com/Luismel06/ORIS79E_Services" target="_blank" rel="noreferrer">
+                  <i class="fa-solid fa-code-branch"></i>
+                  Ver arquitectura / código
+                </a>
+              </div>
+            </article>
+
+            <!-- Dashboard Ventas -->
+            <article class="project">
+              <div class="project-header">
+                <div>
+                  <div class="project-title">Dashboard de Ventas – Power BI</div>
+                  <div class="project-meta">Métricas de ingresos, productos top y tendencia</div>
+                </div>
+                <span class="tag">Power BI</span>
+              </div>
+
+              <!-- Imagen única Dashboard Ventas -->
+              <div class="single-image">
+                <img src="imagenes/dashboard-ventas/Dashboard.png" alt="Dashboard de Ventas en Power BI" />
+              </div>
+
+              <div class="project-body">
+                Dashboard interactivo con métricas como Ventas Netas, Ganancia, Número de Órdenes y Ticket Promedio.
+                Incluye análisis por mes, categoría, canal de venta y top 10 productos, además de segmentadores para
+                filtrar por región y periodo.
+              </div>
+              <div class="project-tags">
+                <span>KPIs de ventas</span>
+                <span>DAX</span>
+                <span>Visualización</span>
+                <span>Segmentadores</span>
+              </div>
+            </article>
+
+            <!-- RRHH Dashboard -->
+            <article class="project">
+              <div class="project-header">
+                <div>
+                  <div class="project-title">Dashboard de Recursos Humanos – Power BI</div>
+                  <div class="project-meta">Headcount, rotación, salarios y desempeño</div>
+                </div>
+                <span class="tag">RRHH · Power BI</span>
+              </div>
+
+              <!-- Imagen única Dashboard RRHH -->
+              <div class="single-image">
+                <img src="imagenes/rrhh-dashboard/Dashboard.png" alt="Dashboard de Recursos Humanos en Power BI" />
+              </div>
+
+              <div class="project-body">
+                Dashboard de análisis de empleados con headcount actual, empleados activos y salidos, rotación %,
+                salario promedio y desempeño promedio. Incluye visualizaciones por departamento, ciudad, modalidad
+                (remoto/presencial/híbrido) y gráficos de entradas y salidas por año.
+              </div>
+              <div class="project-tags">
+                <span>RRHH Analytics</span>
+                <span>Rotación</span>
+                <span>Headcount</span>
+                <span>Salarios</span>
+              </div>
+            </article>
+
+            <!-- Accidentes Python -->
+            <article class="project">
+              <div class="project-header">
+                <div>
+                  <div class="project-title">Análisis de Accidentes de Tránsito (Python)</div>
+                  <div class="project-meta">EDA, visualizaciones y reporte PDF</div>
+                </div>
+                <span class="tag">Python · Pandas</span>
+              </div>
+              <div class="project-body">
+                Análisis exploratorio de 1,200 registros de accidentes de tránsito simulados para RD. Se procesaron
+                fechas, se generaron variables como hora, día de la semana y mes, y se crearon gráficos por hora,
+                día, mes, municipio, tipo de accidente, lesionados y fallecidos. El proyecto incluye script en Python
+                y reporte PDF con hallazgos.
+              </div>
+              <div class="project-tags">
+                <span>Pandas</span>
+                <span>Matplotlib</span>
+                <span>EDA</span>
+                <span>Reporte PDF</span>
+              </div>
+              <div class="project-links">
+                <a class="btn-link" href="https://github.com/Luismel06/analisis-accidentes-transito-2023" target="_blank" rel="noreferrer">
+                  <i class="fa-brands fa-github"></i>
+                  Ver repositorio en GitHub
+                </a>
+              </div>
+            </article>
+
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        Portafolio de Análisis de Datos & Desarrollo de Software · Construido con Power BI, Python, SQL y GitHub Pages · Luismel De León
+      </footer>
+    </div>
   </div>
+
+  <!-- ================= ENGLISH ================= -->
+  <div id="content-en" style="display: none;">
+    <div class="wrapper">
+      <header>
+        <div class="brand">
+          <h1>Luismel De León</h1>
+          <span>Data Analyst & Software Developer · Power BI · Python · SQL · React</span>
+          <div class="tags">
+            <span class="tag">Data Analysis</span>
+            <span class="tag">Business Intelligence</span>
+            <span class="tag">Web Development</span>
+            <span class="tag">APIs & Integration</span>
+          </div>
+        </div>
+        <div class="links">
+          <div class="pill">Portfolio based on real projects (One Way Pizza, ORIS79E, HR, Sales, Accident analysis)</div>
+          <a href="https://github.com/Luismel06" target="_blank" rel="noreferrer">
+            <i class="fa-brands fa-github"></i>
+            GitHub · <span>github.com/Luismel06</span>
+          </a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+            <i class="fa-brands fa-linkedin"></i>
+            LinkedIn · <span>Luismel De León</span>
+          </a>
+          <a href="mailto:luismel809524@gmail.com">
+            <i class="fa-solid fa-envelope"></i>
+            Contact · <span>luismel809524@gmail.com</span>
+          </a>
+        </div>
+      </header>
+
+      <main>
+        <!-- Left column EN -->
+        <section class="about">
+          <h2><span class="icon"><i class="fa-solid fa-user"></i></span>About me</h2>
+          <p>
+            I am a Data Analyst and Software Developer with experience building dashboards, reports, and web
+            applications connected to databases and APIs. I enjoy working with business data to answer concrete
+            questions, automate processes, and design solutions that are actually used.
+          </p>
+          <p>
+            I have worked in real environments doing technical support, API integration and data validation, and
+            I have also built my own projects such as <strong>One Way Pizza</strong> and
+            <strong>ORIS79E Services</strong>, where I combine analytics, backend and frontend work.
+          </p>
+
+          <h2><span class="icon"><i class="fa-solid fa-toolbox"></i></span>Skills</h2>
+          <div class="skills-grid">
+            <div class="skill-card">
+              <strong>Data & BI</strong>
+              Power BI, basic DAX, KPIs design, sales and HR dashboards, data cleaning and modeling.
+            </div>
+            <div class="skill-card">
+              <strong>Languages & Data</strong>
+              Python (pandas, matplotlib), SQL (PostgreSQL, MySQL, Supabase), basic JavaScript and PHP.
+            </div>
+            <div class="skill-card">
+              <strong>Web Development</strong>
+              React, Supabase, REST APIs, authentication, CRUDs, POS integration and state management.
+            </div>
+            <div class="skill-card">
+              <strong>Tools</strong>
+              Git/GitHub, VS Code, Jira, technical documentation, user support and incident reporting.
+            </div>
+          </div>
+
+          <h2><span class="icon"><i class="fa-solid fa-briefcase"></i></span>Relevant Experience</h2>
+          <ul>
+            <li>
+              <strong>Advanced Support Specialist – Visionary Solutions (Night Owl)</strong><br/>
+              Handling advanced technical issues, leading a small support team, documenting recurring problems,
+              and improving user experience.
+            </li>
+            <li>
+              <strong>POS Support Engineer – Artesanía Lisbeth</strong><br/>
+              API integration for their POS system, infrastructure monitoring, user support, testing authentication
+              and ensuring IT environment stability.
+            </li>
+            <li>
+              <strong>Technical Support – Microsoft (Bluemall)</strong><br/>
+              On-site support for corporate users, managing devices, incidents and technical documentation.
+            </li>
+          </ul>
+
+          <h2><span class="icon"><i class="fa-solid fa-graduation-cap"></i></span>Background & Focus</h2>
+          <ul>
+            <li>Software Engineering student with a focus on Data Analysis.</li>
+            <li>Courses in SQL, APIs and QA (PostgreSQL, Postman, QA Fundamentals, Jira Fundamentals, etc.).</li>
+            <li>Current focus: building a career as a <strong>Data Analyst</strong> while growing as a backend and web developer.</li>
+          </ul>
+        </section>
+
+        <!-- Right column EN: Projects -->
+        <section>
+          <h2><span class="icon"><i class="fa-solid fa-chart-line"></i></span>Data & Development Projects</h2>
+          <div class="projects">
+
+            <!-- One Way Pizza EN -->
+            <article class="project">
+              <div class="project-header">
+                <div>
+                  <div class="project-title">One Way Pizza – Sales Platform & KPIs</div>
+                  <div class="project-meta">POS system · React + Supabase · Real-time metrics</div>
+                </div>
+                <span class="tag">Fullstack · Sales</span>
+              </div>
+
+              <!-- Gallery One Way Pizza EN (mismas imágenes) -->
+              <div class="gallery">
+                <img src="imagenes/one-way-pizza/Login.png" alt="One Way Pizza - Login" />
+                <img src="imagenes/one-way-pizza/Admin.png" alt="One Way Pizza - adminhome" />
+                <img src="imagenes/one-way-pizza/Dashboard.png" alt="One Way Pizza - dashboard" />
+                <img src="imagenes/one-way-pizza/Empleado.png" alt="One Way Pizza - empleadohome" />
+                <img src="imagenes/one-way-pizza/Caja.png" alt="One Way Pizza - caja" />
+              </div>
+
+              <div class="project-body">
+                Web-based POS application for a pizza business. Manages orders, products, users and cash flow,
+                connected to Supabase (PostgreSQL) as the backend. Using the sales data, I designed queries and views
+                to analyze revenue, top products and peak demand hours.
+              </div>
+              <div class="project-tags">
+                <span>React</span>
+                <span>Supabase</span>
+                <span>PostgreSQL</span>
+                <span>Sales & KPIs</span>
+              </div>
+              <div class="project-links">
+                <a class="btn-link" href="https://github.com/Luismel06/one-way-pizza" target="_blank" rel="noreferrer">
+                  <i class="fa-solid fa-code-branch"></i>
+                  View architecture / code
+                </a>
+              </div>
+            </article>
+
+            <!-- ORIS79E EN -->
+            <article class="project">
+              <div class="project-header">
+                <div>
+                  <div class="project-title">ORIS79E Services – Service & Ticket Management</div>
+                  <div class="project-meta">Technical services platform · React + Supabase</div>
+                </div>
+                <span class="tag">Services · Operations</span>
+              </div>
+
+              <!-- Gallery ORIS79E EN -->
+              <div class="gallery">
+                <img src="imagenes/oris79e-services/Home.png" alt="ORIS79E - request details" />
+                <img src="imagenes/oris79e-services/Dashboard.png" alt="ORIS79E - services board" />
+                <img src="imagenes/oris79e-services/Nosotros.png" alt="ORIS79E - request details" />
+              </div>
+
+              <div class="project-body">
+                Platform to manage customer requests, assigned technicians, internal posts and quotes. Includes
+                admin and client views, enabling analysis of workload, response times and the status of each service.
+              </div>
+              <div class="project-tags">
+                <span>React</span>
+                <span>Supabase</span>
+                <span>Ticket management</span>
+                <span>Operations</span>
+              </div>
+              <div class="project-links">
+                <a class="btn-link" href="https://github.com/Luismel06/ORIS79E_Services" target="_blank" rel="noreferrer">
+                  <i class="fa-solid fa-code-branch"></i>
+                  View architecture / code
+                </a>
+              </div>
+            </article>
+
+            <!-- Sales Dashboard EN -->
+            <article class="project">
+              <div class="project-header">
+                <div>
+                  <div class="project-title">Sales Dashboard – Power BI</div>
+                  <div class="project-meta">Revenue, top products and trend analysis</div>
+                </div>
+                <span class="tag">Power BI</span>
+              </div>
+
+              <!-- Single image Sales EN -->
+              <div class="single-image">
+                <img src="imagenes/dashboard-ventas/Dashboard.png" alt="Dashboard de Ventas en Power BI" />
+              </div>
+
+              <div class="project-body">
+                Interactive dashboard with metrics like Net Sales, Profit, Number of Orders and Average Ticket.
+                Includes analysis by month, category, sales channel and top 10 products, plus slicers for region
+                and time period.
+              </div>
+              <div class="project-tags">
+                <span>Sales KPIs</span>
+                <span>DAX</span>
+                <span>Visualization</span>
+                <span>Slicers</span>
+              </div>
+
+            </article>
+
+            <!-- HR Dashboard EN -->
+            <article class="project">
+              <div class="project-header">
+                <div>
+                  <div class="project-title">HR Analytics Dashboard – Power BI</div>
+                  <div class="project-meta">Headcount, turnover, salary and performance</div>
+                </div>
+                <span class="tag">HR · Power BI</span>
+              </div>
+
+              <!-- Single image HR EN -->
+              <div class="single-image">
+                <img src="imagenes/rrhh-dashboard/Dashboard.png" alt="HR Analytics Dashboard in Power BI" />
+              </div>
+
+              <div class="project-body">
+                HR dashboard built from an employee dataset. Includes current headcount, active and exited employees,
+                turnover %, average salary and average performance. Shows breakdowns by department, city, work mode
+                (remote/on-site/hybrid) and visualizations for hires and exits per year.
+              </div>
+              <div class="project-tags">
+                <span>HR Analytics</span>
+                <span>Turnover</span>
+                <span>Headcount</span>
+                <span>Salaries</span>
+              </div>
+            </article>
+
+            <!-- Accident Analysis EN -->
+            <article class="project">
+              <div class="project-header">
+                <div>
+                  <div class="project-title">Traffic Accidents Analysis (Python)</div>
+                  <div class="project-meta">EDA, visualizations and PDF report</div>
+                </div>
+                <span class="tag">Python · Pandas</span>
+              </div>
+              <div class="project-body">
+                Exploratory analysis of 1,200 simulated traffic accident records for the Dominican Republic.
+                Processed datetime values, created features like hour, weekday and month, and built charts by hour,
+                day, month, municipality, accident type, injuries and fatalities. The project includes a Python script
+                and a PDF report summarizing findings.
+              </div>
+              <div class="project-tags">
+                <span>Pandas</span>
+                <span>Matplotlib</span>
+                <span>EDA</span>
+                <span>PDF Report</span>
+              </div>
+              <div class="project-links">
+                <a class="btn-link" href="https://github.com/Luismel06/analisis-accidentes-transito-2023" target="_blank" rel="noreferrer">
+                  <i class="fa-brands fa-github"></i>
+                  View GitHub repository
+                </a>
+              </div>
+            </article>
+
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        Data Analytics & Software Development Portfolio · Built with Power BI, Python, SQL and GitHub Pages · Luismel De León
+      </footer>
+    </div>
+  </div>
+
+  <!-- Script para cambiar idioma -->
+  <script>
+    const btn = document.getElementById('lang-toggle');
+    const es = document.getElementById('content-es');
+    const en = document.getElementById('content-en');
+
+    btn.addEventListener('click', () => {
+      const showingES = es.style.display !== 'none';
+      if (showingES) {
+        es.style.display = 'none';
+        en.style.display = 'block';
+        btn.textContent = 'ES';
+      } else {
+        en.style.display = 'none';
+        es.style.display = 'block';
+        btn.textContent = 'EN';
+      }
+    });
+  </script>
 </body>
 </html>
